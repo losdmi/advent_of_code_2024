@@ -29,7 +29,8 @@ func firstFirstMain() error {
 		}
 	}
 
-	result := firstFirstSolution(listA, listB)
+	// result := firstFirstSolution(listA, listB)
+	result := firstSecondSolution(listA, listB)
 	fmt.Println(result)
 
 	return nil
@@ -42,6 +43,21 @@ func firstFirstSolution(listA, listB []int) int {
 	var result int
 	for i := 0; i < len(listA); i++ {
 		result += int(math.Abs(float64(listA[i] - listB[i])))
+	}
+
+	return result
+}
+
+func firstSecondSolution(listA, listB []int) int {
+	m := make(map[int]int)
+
+	for i := 0; i < len(listB); i++ {
+		m[listB[i]] += 1
+	}
+
+	var result int
+	for _, n := range listA {
+		result += n * m[n]
 	}
 
 	return result
