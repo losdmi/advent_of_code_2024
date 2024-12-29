@@ -9,8 +9,8 @@ import (
 	"strings"
 )
 
-func firstFirstMain() error {
-	rawInput, err := os.ReadFile("1-1.txt")
+func firstMain() error {
+	rawInput, err := os.ReadFile("1.txt")
 	if err != nil {
 		return err
 	}
@@ -29,8 +29,9 @@ func firstFirstMain() error {
 		}
 	}
 
-	// result := firstFirstSolution(listA, listB)
-	result := firstSecondSolution(listA, listB)
+	result := firstFirstSolution(listA, listB)
+	fmt.Println(result)
+	result = firstSecondSolution(listA, listB)
 	fmt.Println(result)
 
 	return nil
